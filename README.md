@@ -33,3 +33,17 @@ I am gonna write here anything i learnt or found
 - for algorithm it hates the sharp edges fine details and texture 
 - Too sharp → noisy
 - Too blurry → lost structure
+
+## Phase 6 - Edges
+- Edge detection only works when there is contrast
+- If foreground and background have similar brightness → no edge.
+- edges = cv2.Canny(blur, 50, 150) in this 50 is the low threshold and 150 is the high threshold
+- Strong edges (>150) → always kept
+- Weak edges (50–150) → kept only if connected to strong edges
+- Noise (<50) → discarded
+- This is called hysteresis thresholding.
+- Color → Grayscale → Blur → Edges
+- Color → too much info
+- Grayscale → structure
+- Blur → stability
+- Edges → shape
