@@ -33,6 +33,11 @@ I am gonna write here anything i learnt or found
 - for algorithm it hates the sharp edges fine details and texture 
 - Too sharp → noisy
 - Too blurry → lost structure
+- blur = cv2.GaussianBlur(gray, (5, 5), 0)
+- in this (5,5) is the Kernel size - “How big of an area should OpenCV look at to blur a pixel?”
+- Bigger kernel → more blur
+- Smaller kernel → less blur
+- and 0 is the blur strength so if we set it 0 then CV atomaticaly decides the strength based on the kernel size
 
 ## Phase 6 - Edges
 - Edge detection only works when there is contrast
@@ -47,3 +52,27 @@ I am gonna write here anything i learnt or found
 - Grayscale → structure
 - Blur → stability
 - Edges → shape
+
+## Phase 7 - Contours
+- contours, hierarchy = cv2.findContours(
+    binary_image,
+    cv2.RETR_EXTERNAL,
+    cv2.CHAIN_APPROX_SIMPLE
+)
+- cv2.RETR_EXTERNAL - This tells OpenCV: “Only give me outermost contours”
+- cv2.CHAIN_APPROX_SIMPLE - This controls how many points are stored Straight lines compressed Only corner points kept
+- cv2.drawContours(
+    frame,
+    contours,
+    -1,
+    (0,255,0),
+    2
+)
+    Breakdown:
+    Parameters
+    frame → image to draw on
+    contours → list of contours
+    -1 → draw all contours
+    (0,255,0) → green color
+    2 → thickness
+- so contour works on the principle of finding a closed object 
