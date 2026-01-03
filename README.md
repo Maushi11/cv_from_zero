@@ -76,3 +76,6 @@ I am gonna write here anything i learnt or found
     (0,255,0) → green color
     2 → thickness
 - so contour works on the principle of finding a closed object 
+
+## Phase 8 - Filtering contour
+- we use area a a parameter here to filter our contour 
