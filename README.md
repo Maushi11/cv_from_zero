@@ -79,3 +79,10 @@ I am gonna write here anything i learnt or found
 
 ## Phase 8 - Filtering contour
 - we use area a a parameter here to filter our contour 
+
+## Phase 9 - Bounding Box centroid
+- we first made a bounding box surrounding our largest countour 
+- x, y, w, h = cv2.boundingRect(largest_contour)
+- (x, y) → top-left corner
+- (w, h) → width & height
+- Then we made a centroid 
